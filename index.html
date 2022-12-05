@@ -7,8 +7,8 @@
     <title>Drift boss</title>
   </head>
   <body>
-    <p><span id="min">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
-    <iframe id="game" src="https://www.mathplayground.com/drift-boss-v3/index.html" width="100%" height="600px" scrolling="yes" frameborder="0"></iframe>
+    <!-- <p><span id="min">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p> -->
+    <iframe id="game" src="https://www.mathplayground.com/drift-boss-v3/index.html" width="100%" height="650px" scrolling="yes" frameborder="0"></iframe>
   </body>
   <script>
     hello()
@@ -17,11 +17,11 @@
       setTimeout(function() {
         ya()
         hello()
-      }, 120000);
+      }, 180000);
     }
 
     function ya() {
-        let num = Math.floor(Math.random() * 16);
+        let num = Math.floor(Math.random() * 11);
         if (num == 7) {
             window.open("about:blank")
 
@@ -29,72 +29,72 @@
         }
     }
 
-    window.onload = function () {
+//     window.onload = function () {
   
-  var seconds = 00; 
-  var tens = 00; 
-  var min = 00;
-  var appendTens = document.getElementById("tens")
-  var appendSeconds = document.getElementById("seconds")
-  var appendMin = document.getElementById("min")
-  var Interval ;
+//   var seconds = 00; 
+//   var tens = 00; 
+//   var min = 00;
+//   var appendTens = document.getElementById("tens")
+//   var appendSeconds = document.getElementById("seconds")
+//   var appendMin = document.getElementById("min")
+//   var Interval ;
 
     
-    clearInterval(Interval);
-    Interval = setInterval(startTimer, 10);
+//     clearInterval(Interval);
+//     Interval = setInterval(startTimer, 10);
   
   
 
-  buttonReset.onclick = function() {
-     clearInterval(Interval);
-    tens = "00";
-  	seconds = "00";
-    appendTens.innerHTML = tens;
-  	appendSeconds.innerHTML = seconds;
-  }
+//   buttonReset.onclick = function() {
+//      clearInterval(Interval);
+//     tens = "00";
+//   	seconds = "00";
+//     appendTens.innerHTML = tens;
+//   	appendSeconds.innerHTML = seconds;
+//   }
   
    
   
-  function startTimer () {
-    tens++; 
+//   function startTimer () {
+//     tens++; 
     
-    if(tens <= 9){
-      appendTens.innerHTML = "0" + tens;
-    }
+//     if(tens <= 9){
+//       appendTens.innerHTML = "0" + tens;
+//     }
     
-    if (tens > 9){
-      appendTens.innerHTML = tens;
+//     if (tens > 9){
+//       appendTens.innerHTML = tens;
       
-    } 
+//     } 
     
-    if (tens > 99) {
-      console.log("seconds");
-      seconds++;
-      appendSeconds.innerHTML = "0" + seconds;
-      tens = 0;
-      appendTens.innerHTML = "0" + 0;
-    }
+//     if (tens > 99) {
+//       console.log("seconds");
+//       seconds++;
+//       appendSeconds.innerHTML = "0" + seconds;
+//       tens = 0;
+//       appendTens.innerHTML = "0" + 0;
+//     }
     
-    if (seconds > 59) {
-      console.log("min");
-      min++;
-      appendMin.innerHTML = "0" + min;
-      seconds = 0;
-      appendSeconds.innerHTML = "0" + 0;
+//     if (seconds > 59) {
+//       console.log("min");
+//       min++;
+//       appendMin.innerHTML = "0" + min;
+//       seconds = 0;
+//       appendSeconds.innerHTML = "0" + 0;
       
-    }
+//     }
 
-    if (seconds > 9){
-      appendSeconds.innerHTML = seconds;
-    }
+//     if (seconds > 9){
+//       appendSeconds.innerHTML = seconds;
+//     }
 
-    if (min > 9){
-      appendMin.innerHTML = min;
-    }
+//     if (min > 9){
+//       appendMin.innerHTML = min;
+//     }
   
-  }
+//   }
   
 
-}
+// }
   </script>
 </html>
