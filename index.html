@@ -7,7 +7,7 @@
     <title>Drift boss</title>
   </head>
   <body>
-    <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+    <p><span id="min">00</span>:<span id="seconds">00</span>:<span id="tens">00</span></p>
     <iframe id="game" src="https://www.mathplayground.com/drift-boss-v3/index.html" width="100%" height="600px" scrolling="yes" frameborder="0"></iframe>
   </body>
   <script>
@@ -33,8 +33,10 @@
   
   var seconds = 00; 
   var tens = 00; 
+  var min = 00;
   var appendTens = document.getElementById("tens")
   var appendSeconds = document.getElementById("seconds")
+  var appendMin = document.getElementById("min")
   var Interval ;
 
     
@@ -73,8 +75,21 @@
       appendTens.innerHTML = "0" + 0;
     }
     
+    if (min > 59) {
+      console.log("min");
+      min++;
+      appendMin.innerHTML = "0" + min;
+      seconds = 0;
+      appendSeconds.innerHTML = "0" + 0;
+      
+    }
+
     if (seconds > 9){
       appendSeconds.innerHTML = seconds;
+    }
+
+    if (min > 9){
+      appendMin.innerHTML = min;
     }
   
   }
