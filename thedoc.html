@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://newcss.net/theme/night.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+<title>The Document</title>
+<style>
+dialog {
+  color: black;
+  margin: auto;
+}
+</style>
+<script>
+//let login = document.getElementById("login");
+
+  // Check if server is online
+      fetch('https://38d3ac19-29b7-4ed0-aaa8-5af3630262c3.id.repl.co/test')
+        .then(response => response.text())
+        .then(oc => onlineCheck(oc));
+
+function onlineCheck(oc) {
+document.getElementById("online").innerHTML = "Server is online! Getting game data...";
+document.getElementById("login").showModal();
+}
+
+function login() {
+
+        fetch('https://38d3ac19-29b7-4ed0-aaa8-5af3630262c3.id.repl.co/login?password=' + document.getElementById("password").value)
+        .then(response => response.text())
+        .then(y => gotPass(y));
+}
+
+function gotPass(res) {
+
+  if (res == "no") {
+    document.getElementById("nodis").innerHTML = "Not the password";
+  } else {
+    document.getElementById("login").close();
+    document.getElementById("online").innerHTML = "Welcome to The Document";
+    document.getElementById("main").innerHTML = res;
+  }
+}
+</script>
+</head>
+<body>
+<h1>The Document</h1>
+  
+<h2 id="online">Waiting for the server to be online</h2>
+
+<div id="main"></div>
+  
+<dialog id="login" style="text-align: center;">
+  <h1 id="nodis" style="color: black;">Login to the document</h1>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login();">Submit</button>
+</dialog>
+</body>
+</html>
